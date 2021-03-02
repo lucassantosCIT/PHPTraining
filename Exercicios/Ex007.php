@@ -15,9 +15,6 @@
 
 function triangleExistence($a, $b, $c) 
 {
-    if ($a + $b > $c && $b + $c > $a && $a + $c > $b) {
-        echo "This is a square";
-    } 
         
     if ($a == $b && $b == $c && $a == $c) {
         echo "This is a square (equilateral square)";
