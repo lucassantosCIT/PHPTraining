@@ -3,7 +3,7 @@
 function validatingCPF($cpf) {
  
         // CREDITS FOR THE CPF FORMULA CODE: RAFAEL-NERI (GITHUB)
-    // Verify if there are the total of 11 numbers
+    // Verify if there are a total of 11 numbers
     if (strlen($cpf) != 11) {
         return " CPF is invalid";
     }
