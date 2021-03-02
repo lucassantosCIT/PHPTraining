@@ -2,9 +2,9 @@
 
 function findMaxAndMin(...$values) 
 {
-    echo "Maior numero = ", max(array(...$values));
+    echo "Biggest number = ", max(array(...$values));
     echo " <br> ";
-    echo " Menor numero = ", min(array(...$values));
+    echo " Smallest number = ", min(array(...$values));
 }
 
 

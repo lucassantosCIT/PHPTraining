@@ -15,7 +15,7 @@ function validatingCPF($cpf) {
         }
         $d = ((10 * $d) % 11) % 10;
         if ($cpf[$c] != $d) {
-            return false;
+            return "CPF in invalid";
         }
     }
     return " CPF is valid";
