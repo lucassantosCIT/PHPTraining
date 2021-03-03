@@ -6,7 +6,7 @@ function findDay($choosenDay)
     $days = array(
     1 => 'sunday',
     2 => 'morning',
-    3 => 'thursday',
+    3 => 'tuesday',
     4 => 'wednesday',
     5 => 'thursday',
     6 => 'friday',
