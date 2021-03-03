@@ -52,8 +52,10 @@ function triangleExistence($a, $b, $c)
     }
 }
 
-echo triangleExistence(5, 1, 5); // isosceles square
+echo triangleExistence(1, 2, 3); // not a square
 echo " <br> ";
 echo triangleExistence(100, 100, 100); // equilateral square
 echo " <br> ";
 echo triangleExistence(2, 5, 1); // scalene triangle
+echo " <br> ";
+echo triangleExistence(2, 2, 1); // isosceles triangle
