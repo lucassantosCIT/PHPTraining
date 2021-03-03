@@ -1,66 +1,52 @@
-
 <?php
 
-// 7 - Faça um Programa que peça os 3 lados de um triângulo. 
- // O programa deverá informar se os valores podem ser um triângulo. Indique, 
-  //caso os lados formem um triângulo, se o mesmo é: equilátero, isósceles ou escaleno.
-   // - Dicas:
-    //  - Três lados formam um triângulo quando a soma de quaisquer dois lados for maior 
-    // que o terceiro;
-     // - Triângulo Equilátero: três lados iguais;
-      // - Triângulo Isósceles: quaisquer dois lados iguais;
-       // - Triângulo Escaleno: três lados diferentes;
-
-      
-
-function triangleExistence($a, $b, $c) 
+function validatingCPF($cpf) 
 {
-     
-    // if ($a + $b < $c) 
-    // {
-    //     echo "This is not a square";
-    // }
+ 
 
+    // Verify if the fill is writed
+if (empty($cpf)) 
+     {
+        return "CPF is invalid";
+     }
+
+    // Elimina possivel mascara
+    $cpf = preg_replace("/[^0-9]/", "", $cpf);
+    $cpf = str_pad($cpf, 11, '0', STR_PAD_LEFT);
+
+    // Verify if the total of numbers if 11
+    if (strlen($cpf) != 11) {
+        return "CPF is invalid";
+    }
+    // Verify the sequences
+    else if ($cpf == '00000000000' || 
+         $cpf == '11111111111' || 
+         $cpf == '22222222222' || 
+         $cpf == '33333333333' || 
+         $cpf == '44444444444' || 
+         $cpf == '55555555555' || 
+         $cpf == '66666666666' || 
+         $cpf == '77777777777' || 
+         $cpf == '88888888888' || 
+         $cpf == '99999999999') {
+        return "CPF is invalid";
+
+
+        // CPF Digits Validator 
+    } else 
+    {   
     
-    if ($a + $b < $c || $b + $c < $a || $c + $a == $b) 
-    {
-        echo "This is not a square";
-    }
+        for ($t = 9; $t < 11; $t++) {
+        
+            for ($d = 0, $c = 0; $c < $t; $c++) {
+                $d += $cpf{$c} * (($t + 1) - $c);
+            }
+            $d = ((10 * $d) % 11) % 10;
+            if ($cpf{$c} != $d) {
+                return "CPF is invalid";
+            }
+        }
 
-    elseif ($a + $b == $c || $b + $c == $a || $c + $a == $b) {
-        echo "This is not a square";
-    }
-
-    elseif ($a == $b && $b == $c && $a == $c) 
-    {
-        echo "This is a square (equilateral square)";
-    } 
-
-    elseif ($a == $b || $b == $c || $a == $c) 
-    {
-        echo "This is a square (isosceles square)";
-    }
-
-    elseif ($a !== $b && $b !== $c && $a !== $c) 
-    {
-        echo "This is a square (scalene triangle)";
-    }
-
-    elseif ($a + $b < $c && $b + $c < $a && $a + $c < $b) 
-    {
-        echo "This is not a square";
+        return "CPF is valid"; 
     }
 }
-
-echo triangleExistence(1, 2, 3); // not a square
-echo " <br> ";
-echo triangleExistence(100, 100, 100); // equilateral square
-echo " <br> ";
-echo triangleExistence(2, 5, 1); // scalene triangle
-echo " <br> ";
-echo triangleExistence(2, 2, 1); // isosceles triangle
-echo " <br> ";
-echo triangleExistence(2, 2, 1); // isosceles triangle
-
-
-
