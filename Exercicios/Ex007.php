@@ -15,26 +15,45 @@
 
 function triangleExistence($a, $b, $c) 
 {
-        
-    if ($a == $b && $b == $c && $a == $c) {
+     
+    // if ($a + $b < $c) 
+    // {
+    //     echo "This is not a square";
+    // }
+
+    
+    if ($a + $b < $c || $b + $c < $a || $c + $a == $b) 
+    {
+        echo "This is not a square";
+    }
+
+    elseif ($a + $b == $c || $b + $c == $a || $c + $a == $b) {
+        echo "This is not a square";
+    }
+
+    elseif ($a == $b && $b == $c && $a == $c) 
+    {
         echo "This is a square (equilateral square)";
     } 
 
-    if ($a == $b || $b == $c || $a == $c) {
+    elseif ($a == $b || $b == $c || $a == $c) 
+    {
         echo "This is a square (isosceles square)";
     }
 
-    if ($a !== $b && $b !== $c && $a !== $c) {
+    elseif ($a !== $b && $b !== $c && $a !== $c) 
+    {
         echo "This is a square (scalene triangle)";
     }
 
-    if ($a + $b < $c && $b + $c < $a && $a + $c < $b) {
+    elseif ($a + $b < $c && $b + $c < $a && $a + $c < $b) 
+    {
         echo "This is not a square";
     }
 }
 
-echo triangleExistence(6, 6, 10); // isosceles square
+echo triangleExistence(5, 1, 5); // isosceles square
 echo " <br> ";
-echo triangleExistence(100, 10, 10); // equilateral square
+echo triangleExistence(100, 100, 100); // equilateral square
 echo " <br> ";
 echo triangleExistence(2, 5, 1); // scalene triangle
