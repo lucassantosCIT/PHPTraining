@@ -5,7 +5,7 @@
   <p>Breed: <input type="text" name="breed" /></p>
   <p>Age: <input type="text" name="age" /></p>
   <p>Weight: <input type="text" name="weight" /></p>
-  <p>CPF: <input type="text" name="cpf" /></p>
+  <p>CPF: (only numbers) <input type="text" name="cpf" /></p>
   <p><input type="submit" /></p>
 </form>
 
