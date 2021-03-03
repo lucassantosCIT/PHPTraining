@@ -59,3 +59,8 @@ echo " <br> ";
 echo triangleExistence(2, 5, 1); // scalene triangle
 echo " <br> ";
 echo triangleExistence(2, 2, 1); // isosceles triangle
+echo " <br> ";
+echo triangleExistence(2, 2, 1); // isosceles triangle
+
+
+
