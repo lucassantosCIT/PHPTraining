@@ -10,7 +10,6 @@ if (empty($cpf))
         return "CPF is invalid";
      }
 
-    // Elimina possivel mascara
     $cpf = preg_replace("/[^0-9]/", "", $cpf);
     $cpf = str_pad($cpf, 11, '0', STR_PAD_LEFT);
 
