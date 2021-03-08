@@ -139,6 +139,33 @@ class Livro extends Pessoa implements Publicacao
     }
 
 
+    /**
+     * Get the value of _Detalhes
+     */ 
+    public function get_Detalhes()
+    {
+        return $this->_Detalhes;
+    }
+
+    /**
+     * Set the value of _Detalhes
+     *
+     * @return  self
+     */ 
+    public function set_Detalhes($_Detalhes)
+    {
+        $this->_Detalhes = $_Detalhes;
+
+        return $this;
+    }
+
+
+
+
+
+
+
+
     // INTERFACE FUNCTIONS
 
 
@@ -159,16 +186,35 @@ class Livro extends Pessoa implements Publicacao
 
         $leitorGetter = $this->get_Aberto();
         $leitorSetter = $this->set_Aberto();
-        if ($leitorGetter == true) 
+        if ($leitorGetter == true)
         {
+        
             return $leitorSetter = false;
         }
     }
 
     public function folhear() 
     {
-        foreach ($page as $_PagAtual) {
-            echo $page;
+        for ($i = 0; $i <= $this->get_TotPaginas(); $i++) 
+        {
+            echo $i;
         }
     }
+    
+    public function avancarPag()
+    {
+        $newPage = $this->get_PagAtual()+1;
+        echo $newPage;
+    }
+
+
+    public function voltarPag() {
+        {
+            $lastPage = $this->get_PagAtual()-1;
+            echo $lastPage;
+        }
+    }
+
+
+
 }
